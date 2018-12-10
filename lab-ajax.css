@@ -1,0 +1,23 @@
+body {
+  background-color: lightblue;
+  margin-left: 1em;
+}
+#getApiKey {
+  background-color: lightgreen;
+  border-radius: 20px;
+  width: 5em;
+  height:3em;
+  text-align: center;
+}
+input {
+  border: solid blue 1px;
+}
+span {
+  font-weight: bold;
+}
+div {
+  border: solid black 1px;
+}
+div * {
+  margin-left: 1em;
+}

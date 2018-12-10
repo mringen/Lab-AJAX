@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="lab-ajax.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+      <script type="text/javascript" src="lab-ajax-getApi.js"></script>
+      <script type="text/javascript" src="lab-ajax.js"></script>
+  </head>
+  <body>
+    <h1>LAB AJAX ASSIGNMENT</h1>
+    <button id="apiRequest">get api request</button>
+    <div id="getApiKey"></div>
+
+
+    <button id="addBook">Add book</button><br>
+    <div id="containerAddBook">
+    <span>Title:</span><br>
+    <input id="titleBook" type="text" value=""><br>
+    <span>Author:</span><br>
+    <input id="authorBook" type="text" value="">
+    <ol id="newBooks">
+    </ol>
+    </div>
+    <p></p>
+
+    <button id="viewBook">Veiw book</button><br>
+    <div id="containerViewBook">
+    <span>View Books</span><br>
+    <ol id="bookList">
+    </ol>
+    </div>
+    <p></p>
+
+    <button id="changeBook">Change book</button><br>
+    <div id="containerChangeBook">
+    <span>#id:</span><br>
+    <input id="bookId"><br>
+    <span>Title:</span><br>
+    <input  id="changeTitle"><br>
+    <span>Author:</span><br>
+    <input  id="changeAuthor">
+    </div>
+    <p></p>
+
+    <button id="deleteBook">Delete Book</button><br>
+    <div id="containerDeleteBook">
+    <span>#id:</span><br>
+    <input id="removeId">
+    </div>
+
+  </body>
+</html>
