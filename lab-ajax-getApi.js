@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
 $('#apiRequest').on('click', event => {
-  const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
+  const url = 'https://www.forverkliga.se/JavaScript/api/crud.ph';
   const settings = {
     method: 'GET',
     data: {
@@ -12,17 +12,11 @@ $('#apiRequest').on('click', event => {
   .done(data => {
      let newData = JSON.parse(data);
      let output = newData.key;
-    $('#getApiKey').html(output);
+     $('#getApiKey').html(output);
+  })
+  .fail(data => {
+    $('#apiRequest').append('<p>Failed to delete book!!</p>');
   });
-});
+ });
 
 }); // When Loaded
-
-
-
-/*function addedNewBook (event) {
-    let newBook = $('#titleBook').val();
-    let newBookAuthor = $('#authorBook').val();
-    $('#bookList').append(`Title: ${newBook}, Author: ${newBookAuthor}</li>`);
-
-};*/

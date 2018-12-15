@@ -1,23 +1,131 @@
 body {
-  background-color: lightblue;
-  margin-left: 1em;
+  margin: 0em 0em 0em 0em;
+}
+#hidden {
+  background-color: #FF928B;
+}
+#hidden div, button {
+  display: inline-block;
+  margin-bottom: 20px;;
+}
+header {
+  height: 30em;
+  background-color: #FFAC81;
+}
+main {
+  background-color: #FF928B;
 }
 #getApiKey {
   background-color: lightgreen;
   border-radius: 20px;
-  width: 5em;
+  width: 6.3em;
   height:3em;
   text-align: center;
 }
+h1 {
+  text-align: center;
+  font-size: 4em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+img {
+  height: 21em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+button {
+  padding: 1em;
+  width: 9.2em;
+  border-radius: 20px;
+  background-color: #FEC3A6;
+  outline: none;
+  margin-left: 2em;
+}
+button:hover {
+  opacity: 0.8;
+  font-weight: bold;
+}
 input {
-  border: solid blue 1px;
+  background-color: #CDEAC0;
+  border-radius: 20px;
+  width: 20em;
+  height: 3em;
+  margin-bottom: 1em;
+  outline: none;
 }
 span {
   font-weight: bold;
 }
-div {
-  border: solid black 1px;
-}
 div * {
-  margin-left: 1em;
+  margin-left: 2em;
 }
+p {
+  border: solid black 1px;
+  margin: 0em 1em 0em 1em;
+  opacity: 0.2;
+}
+#addBook {
+  margin-bottom: 2em;
+}
+#containerViewBook {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#viewBook {
+  margin-bottom: 2em;
+}
+#containerChangeBook {
+  margin-top: 2em;
+}
+#changeBook {
+  margin-bottom: 2em;
+}
+#containerDeleteBook {
+  margin-top: 2em;
+}
+#deleteBook {
+  margin-bottom: 2em;
+}
+
+li {
+  list-style: none;
+  font-family: 'EB Garamond', serif;
+  border-radius: 10px;
+  background-color: #FAF5BA;
+  padding: 0.7em;
+  margin: 1em;
+}
+li:last-child {
+  background-color: yellow;
+}
+footer {
+  height: 10em;
+}
+
+@media (max-width: 510px) {
+
+  h1 {
+    text-align: center;
+    width: 60vw;
+    display: block;
+  }
+  span {
+    text-align: center;
+  }
+  #containerAddBook * {
+    margin: 0em auto 0em auto;
+    display: block;
+  }
+  #containerViewBook * {
+    margin: 0em auto 1em auto;
+    display: block;
+  }
+  #containerChangeBook * {
+    margin: 0em auto 0em auto;
+    display: block;
+  }
+  #containerDeleteBook * {
+    margin: 0em auto 0em auto;
+    display: block;
+  }
+};
