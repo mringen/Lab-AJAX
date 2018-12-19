@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
 $('#apiRequest').on('click', event => {
-  const url = 'https://www.forverkliga.se/JavaScript/api/crud.ph';
+  const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
   const settings = {
     method: 'GET',
     data: {

@@ -1,5 +1,6 @@
 body {
   margin: 0em 0em 0em 0em;
+  display: grid;
 }
 #hidden {
   background-color: #FF928B;
@@ -8,19 +9,19 @@ body {
   display: inline-block;
   margin-bottom: 20px;;
 }
-header {
-  height: 30em;
-  background-color: #FFAC81;
-}
-main {
-  background-color: #FF928B;
-}
 #getApiKey {
   background-color: lightgreen;
   border-radius: 20px;
   width: 6.3em;
   height:3em;
   text-align: center;
+}
+header {
+  height: 30em;
+  background-color: #FFAC81;
+}
+main {
+  background-color: #FF928B;
 }
 h1 {
   text-align: center;
@@ -55,39 +56,24 @@ input {
 }
 span {
   font-weight: bold;
+  font-size: 1em;
 }
 div * {
   margin-left: 2em;
 }
 p {
   border: solid black 1px;
-  margin: 0em 1em 0em 1em;
+  margin: 1em 1em 2em 1em;
   opacity: 0.2;
 }
-#addBook {
-  margin-bottom: 2em;
-}
-#containerViewBook {
+div * {
   margin-top: 2em;
-  margin-bottom: 2em;
-}
-#viewBook {
-  margin-bottom: 2em;
-}
-#containerChangeBook {
-  margin-top: 2em;
-}
-#changeBook {
-  margin-bottom: 2em;
-}
-#containerDeleteBook {
-  margin-top: 2em;
-}
-#deleteBook {
   margin-bottom: 2em;
 }
 
 li {
+  display: inline-block;
+  width: 70%;
   list-style: none;
   font-family: 'EB Garamond', serif;
   border-radius: 10px;
@@ -95,37 +81,42 @@ li {
   padding: 0.7em;
   margin: 1em;
 }
-li:last-child {
-  background-color: yellow;
-}
 footer {
   height: 10em;
+}
+
+@media (min-width: 511px) and (max-width: 730px) {
+
+  #containerAddBook * {
+    margin: 2em 0em 0em 2em;
+    display: block;
+  }
+  li {
+    width: 60%;
+    margin-left: 0em;
+  }
+
 }
 
 @media (max-width: 510px) {
 
   h1 {
+    font-size: 3em;
     text-align: center;
-    width: 60vw;
+    height: auto;
     display: block;
   }
   span {
     text-align: center;
   }
-  #containerAddBook * {
-    margin: 0em auto 0em auto;
-    display: block;
-  }
-  #containerViewBook * {
+  div * {
     margin: 0em auto 1em auto;
     display: block;
   }
-  #containerChangeBook * {
-    margin: 0em auto 0em auto;
-    display: block;
+  li {
+    margin-right: 2em;;
   }
-  #containerDeleteBook * {
-    margin: 0em auto 0em auto;
-    display: block;
+  input {
+    width: 80%;
   }
 };

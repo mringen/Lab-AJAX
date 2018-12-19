@@ -60,69 +60,74 @@ function addedBooks (data) {
   let author = $('.authorBook').val();
   $('#newBooks').append(`<li>Title: ${title} Author: ${author}</li>`);
   if (ajaxData.status == 'success') {
-    $('#newBooks').append('<li>Book added succsessfully</li>')
+    $('.messageAdd').html('Book added succsessfully');
   }
   else {
-    $('#newBooks').append('<li>Failed to add book!!</li>')
+    $('.messageAdd').html('Failed to add book!!');
   }
 }
 function errorAddBook (data) {
-  $('#containerAddBook').append('<p>Failed to add book!!</p>');
+  $('.messageAdd').html('Failed to add book!!');
 };
 
-// viewBook
+// viewBook, 'deleteBook'
 function viewBooks (data) {
   $('#bookList').empty();
   let dataViewList = JSON.parse(data);
   $.each(dataViewList.data, function (index, value) {
     $('#bookList').append(`<li> Title: ${value.title}, Author: ${value.author},
-      Id: ${value.id}</li><button id="${value.id}" class="deleteBook">Delete button</button>`);
-      console.log('done view');
-  })
+      Id: ${value.id}</li><button id="${value.id}"class="deleteBook">Delete button</button>`);
+      console.log(dataViewList.status);
+      if (dataViewList.status == 'success') {
+        $('#containerViewBook span').html('books loaded');
+      }
+      else {
+        $('#containerViewBook span').html('books failed to load');
+      }
+  });
+  // deleteBook
   $('.deleteBook').on('click', event  => {
-    console.log($('.deleteBook').prop('id'));
+    let id =  $(event.target).prop('id');
     const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
     const settings = {
       method: 'GET',
       data: {
         op: 'delete',
         key: apikey,
-        id: $('.deleteBook').prop('id')
+        id: id
       },
     }
-    console.log($('.deleteBook').attr('id'));
     $.ajax(url, settings)
     .done(data => {
+      $('span').empty();
       let removedObj = JSON.parse(data);
       if (removedObj.status == 'success') {
-    $('#containerDeleteBook').append('<p>Mission complete</p>');
+    $('#containerViewBook span').html('Book was succsessfully deleted');
     }
     else {
-      $('#containerDeleteBook').append('<p>Abort, mission collapsed</p>');
+      $('#containerViewBook span').html('Fail to delete book');
     }
   });
-});
-
+  });
 };
 function ErrorViewBooks () {
-  $('#containerViewBook').append('<p>Failed to show booklist!!</p>');
-  console.log('errorview');
+  $('#containerViewBook span').html('Failed to show booklist!!');
 }
 
 // changeBook
 function ChangeBookInfo (data) {
+  $('.messageChange').empty();
   let obj  = JSON.parse(data);
   if (obj.status == 'success') {
-    $('#containerChangeBook').append('<p>Book info changed</p>').css;
+    $('.messageChange').html('Book info changed');
   }
   else {
-    $('#containerChangeBook').append('<p>Something went wrong!!</p>');
+    $('.messageChange').html('Something went wrong!! try again');
   }
 };
 function  errorChangeBook () {
-  $('#containerChangeBook').append('<p>Failed to change book info!!</p>');
+  $('.messageChange').html('Something went wrong!! try again');
 };
-
 
 
 
